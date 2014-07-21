@@ -91,11 +91,6 @@
     }
 }
 
-- (IBAction)slideAction:(UISlider *)sender {
-    int slideValue = sender.value;
-    self.stringLabel.text = [[self.flipsHistory objectAtIndex:slideValue] string];
-}
-
 - (IBAction)redealAction:(UIButton *)sender {
     self.game = [[CardMatchingGame alloc] initWithCardCount:[self.playingCardView count]
                                                   usingDeck:[self createDeak]];
@@ -103,8 +98,9 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
     self.stringLabel.text = @"Play again";
     [self.flipsHistory removeAllObjects];
-    for (PlayingCardGame *playingSetView in self.playingCardView){
-        playingSetView.faceUp = NO;
+    for (PlayingCardGame *playingcardView in self.playingCardView){
+        playingcardView.faceUp = NO;
+        playingcardView.alpha = 1.0;
     }
     [self setInitialCards];
 }
@@ -176,7 +172,6 @@
         if (!playingcardView.faceUp) {
             [self drawRandomPlayingCard:indexOfCard];
         }
-        //playingcardView.faceUp = !playingSetView.faceUp;
     }
 }
 
