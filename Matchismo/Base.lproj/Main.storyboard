@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Jtp-vm-Htq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Card Game View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CardGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-p9-M08">
+                                <rect key="frame" x="24" y="404" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-Y9-TS6">
+                                <rect key="frame" x="225" y="400" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="redeal"/>
+                                <connections>
+                                    <action selector="redealAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LUW-hM-ho0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-gX-ccW">
+                                <rect key="frame" x="20" y="346" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Gl-82l" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="74" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bdb-fu-Zlr" appends="YES" id="lgt-WO-wPp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="InS-3v-fQi" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="74" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ltP-qU-tzw" appends="YES" id="6e2-DI-hmK"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yl-kM-Dxj" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="74" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cpg-Ny-pmN" appends="YES" id="hoj-x8-o44"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vm2-s3-YDq" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="74" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Rhj-g3-XLd" appends="YES" id="b1w-bW-I4V"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-Jm-39x" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="74" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="py4-Eb-g13" appends="YES" id="27w-z3-hkn"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJS-Zp-Tik" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="74" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="k7T-ea-CAn" appends="YES" id="ptM-Ii-VbA"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytp-ah-1G4" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="142" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4gl-QW-eWM" appends="YES" id="KeL-cR-dfV"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEt-6a-UOa" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="142" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3IC-AX-r4A" appends="YES" id="pc8-9C-yWW"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-uH-sc9" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="142" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VC0-Jo-ve2" appends="YES" id="lLb-cg-oor"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kt5-2L-Lmt" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="142" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zf3-G9-nxJ" appends="YES" id="jvx-sP-ITC"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-M8-y7x" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="142" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6F1-tc-cUD" appends="YES" id="Ckk-Jc-kRc"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mco-X8-U5S" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="142" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WMv-PL-8fP" appends="YES" id="qkR-tp-uUJ"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZS-6l-XUi" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="210" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CX7-Ab-Mnq" appends="YES" id="qAx-kp-cvp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jac-Ol-vAx" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="210" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wak-jD-rkI" appends="YES" id="L2E-cW-a5s"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elu-N3-LDn" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="210" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m1z-EZ-gpd" appends="YES" id="pKZ-LK-33H"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-Wv-4QK" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="210" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ScE-fB-od5" appends="YES" id="NeP-gp-D1o"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-Us-hfJ" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="210" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nTx-sE-4rQ" appends="YES" id="hAV-Pv-5mO"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gvt-pi-qA4" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="210" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fs8-Lc-QXV" appends="YES" id="wg8-IG-Qag"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A79-e6-elu" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="278" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xuz-uV-8Mu" appends="YES" id="zxH-cp-IUq"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yZi-1u-BHM" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="278" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jFg-2M-zip" appends="YES" id="lag-s5-x9z"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-7c-IuA" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="278" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MPC-AC-8oD" appends="YES" id="0eh-QH-sfC"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-Vn-q0h" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="278" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yGN-R8-3id" appends="YES" id="9cl-Qz-nwe"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="za6-PU-s6c" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="278" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Z3Y-hE-j1y" appends="YES" id="wNw-Sw-54p"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-QR-Ggt" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="278" width="40" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kNC-p7-uAG" appends="YES" id="IWZ-4N-PgU"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o3Z-0o-dZJ">
+                        <barButtonItem key="rightBarButtonItem" title="history" id="ETI-zl-rij">
+                            <connections>
+                                <segue destination="5Rm-bZ-zhh" kind="push" identifier="Show History" id="TUQ-DU-Lzo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scoreLabel" destination="hNg-p9-M08" id="osR-aS-aRk"/>
+                        <outlet property="stringLabel" destination="Fdy-gX-ccW" id="ieM-es-h9i"/>
+                        <outletCollection property="playingCardView" destination="WBg-Gl-82l" id="tMd-aH-4bu"/>
+                        <outletCollection property="playingCardView" destination="InS-3v-fQi" id="hbS-7D-368"/>
+                        <outletCollection property="playingCardView" destination="4yl-kM-Dxj" id="Ywq-Qp-D9z"/>
+                        <outletCollection property="playingCardView" destination="Vm2-s3-YDq" id="yMG-rd-9Af"/>
+                        <outletCollection property="playingCardView" destination="JzP-Jm-39x" id="bRQ-g1-gdx"/>
+                        <outletCollection property="playingCardView" destination="RJS-Zp-Tik" id="1WE-4e-3Er"/>
+                        <outletCollection property="playingCardView" destination="ytp-ah-1G4" id="6Ix-bE-0ak"/>
+                        <outletCollection property="playingCardView" destination="YEt-6a-UOa" id="PWE-Po-BMQ"/>
+                        <outletCollection property="playingCardView" destination="ewG-uH-sc9" id="u3i-gO-PSW"/>
+                        <outletCollection property="playingCardView" destination="kt5-2L-Lmt" id="yvg-Bx-BH1"/>
+                        <outletCollection property="playingCardView" destination="7FS-M8-y7x" id="qSe-cd-Udi"/>
+                        <outletCollection property="playingCardView" destination="Mco-X8-U5S" id="EgV-Y4-gjz"/>
+                        <outletCollection property="playingCardView" destination="OZS-6l-XUi" id="A9U-mL-7OK"/>
+                        <outletCollection property="playingCardView" destination="jac-Ol-vAx" id="Yy1-jZ-nUj"/>
+                        <outletCollection property="playingCardView" destination="elu-N3-LDn" id="ZZH-ld-a0Y"/>
+                        <outletCollection property="playingCardView" destination="jcx-Wv-4QK" id="Ble-Mo-Mca"/>
+                        <outletCollection property="playingCardView" destination="rEH-Us-hfJ" id="RIB-s5-tcV"/>
+                        <outletCollection property="playingCardView" destination="Gvt-pi-qA4" id="a7V-VU-EoI"/>
+                        <outletCollection property="playingCardView" destination="A79-e6-elu" id="cpK-B6-IcJ"/>
+                        <outletCollection property="playingCardView" destination="yZi-1u-BHM" id="uka-sI-p6W"/>
+                        <outletCollection property="playingCardView" destination="Ebh-7c-IuA" id="64W-8o-mU2"/>
+                        <outletCollection property="playingCardView" destination="vX6-Vn-q0h" id="Xkp-Ms-H6h"/>
+                        <outletCollection property="playingCardView" destination="za6-PU-s6c" id="AWz-No-jyI"/>
+                        <outletCollection property="playingCardView" destination="Zzs-QR-Ggt" id="jQR-5J-9Q7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="bdb-fu-Zlr">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="kRd-qc-KhC"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ltP-qU-tzw">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="uPV-4c-x8e"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="cpg-Ny-pmN">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="b4F-8A-KbH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Rhj-g3-XLd">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="35L-bj-dm4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="py4-Eb-g13">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="bTn-Hq-sbX"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="k7T-ea-CAn">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="nEG-Lf-vwR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="4gl-QW-eWM">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="4nS-e7-Cn6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="3IC-AX-r4A">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="sG3-c4-z6L"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="VC0-Jo-ve2">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="tsh-rm-6LW"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="zf3-G9-nxJ">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="lEy-BW-9u4"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="6F1-tc-cUD">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="1qo-nA-btC"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="WMv-PL-8fP">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="9va-x2-s5n"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="CX7-Ab-Mnq">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="fCS-Ma-jsu"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="wak-jD-rkI">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="d34-bN-usI"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="m1z-EZ-gpd">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="MGP-8J-gXF"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ScE-fB-od5">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="pSL-Ac-3tI"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="nTx-sE-4rQ">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="pYR-An-DTN"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="fs8-Lc-QXV">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="tas-HY-Jpn"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="xuz-uV-8Mu">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="4s9-xW-O9t"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="jFg-2M-zip">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="P8z-ay-wyF"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="MPC-AC-8oD">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="vAN-xZ-O8R"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="yGN-R8-3id">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="19Z-X7-HWW"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Z3Y-hE-j1y">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="veq-Hi-zBA"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="kNC-p7-uAG">
+                    <connections>
+                        <action selector="swipe:" destination="vXZ-lx-hvc" id="GLZ-nM-yjs"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-556" y="-193"/>
+        </scene>
+        <!--History View Controller - History-->
+        <scene sceneID="kJd-e7-RwG">
+            <objects>
+                <viewController title="History" id="5Rm-bZ-zhh" customClass="HistoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ike-tz-yj2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kg4-ag-der"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXb-3G-3GM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoE-Vd-zsF">
+                                <rect key="frame" x="20" y="72" width="280" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WGY-vb-hC8"/>
+                    <connections>
+                        <outlet property="textView" destination="IoE-Vd-zsF" id="Tkg-ng-6Im"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fui-8O-nx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="-196"/>
+        </scene>
+        <!--Set View Controller - Set Card Game-->
+        <scene sceneID="zoV-QT-iHr">
+            <objects>
+                <viewController title="Set Card Game" id="sbE-3W-yGt" customClass="SetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CBm-yi-259"/>
+                        <viewControllerLayoutGuide type="bottom" id="a6F-L6-ePD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IgH-F6-hGX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-1k-bOg" customClass="PlayingSetCardView">
+                                <rect key="frame" x="20" y="72" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RVh-j6-mXx" appends="YES" id="sbs-xu-Hui"/>
+                                    <outletCollection property="gestureRecognizers" destination="pn3-yR-Pq5" appends="YES" id="HdB-qM-3Ua"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1tZ-El-QKt" customClass="PlayingSetCardView">
+                                <rect key="frame" x="95" y="72" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="p9t-fr-etS" appends="YES" id="Skg-2O-D8W"/>
+                                    <outletCollection property="gestureRecognizers" destination="74o-ZE-nFI" appends="YES" id="z0q-bT-NbG"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dus-Kj-wv0" customClass="PlayingSetCardView">
+                                <rect key="frame" x="165" y="72" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DZu-jf-DTa" appends="YES" id="Jf8-do-Hc3"/>
+                                    <outletCollection property="gestureRecognizers" destination="6dd-y4-ojE" appends="YES" id="1uj-dS-wBy"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rph-Rk-WnA" customClass="PlayingSetCardView">
+                                <rect key="frame" x="240" y="72" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Buo-BS-Zor" appends="YES" id="Kf9-UO-Qts"/>
+                                    <outletCollection property="gestureRecognizers" destination="arq-Jc-EeR" appends="YES" id="0yC-1K-Fxe"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AA4-MV-erF" customClass="PlayingSetCardView">
+                                <rect key="frame" x="20" y="170" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Pjk-13-Xjj" appends="YES" id="emP-Xf-ef9"/>
+                                    <outletCollection property="gestureRecognizers" destination="ZF5-hL-S2x" appends="YES" id="MXg-xg-S2Y"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MG3-kC-TLj" customClass="PlayingSetCardView">
+                                <rect key="frame" x="95" y="170" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Auo-IX-78G" appends="YES" id="Lkx-o1-s7Z"/>
+                                    <outletCollection property="gestureRecognizers" destination="lCA-Pm-Kaf" appends="YES" id="MGz-mk-aab"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9LE-co-SZg" customClass="PlayingSetCardView">
+                                <rect key="frame" x="165" y="170" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xI0-lD-xeN" appends="YES" id="AQo-21-S0I"/>
+                                    <outletCollection property="gestureRecognizers" destination="kJA-4M-rUb" appends="YES" id="ZrR-ou-hh1"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7BX-Bz-jkJ" customClass="PlayingSetCardView">
+                                <rect key="frame" x="240" y="170" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NN5-iZ-jkG" appends="YES" id="8h5-pd-9ux"/>
+                                    <outletCollection property="gestureRecognizers" destination="gjk-vK-8Pi" appends="YES" id="PSb-eF-zWT"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJ8-vN-5fY" customClass="PlayingSetCardView">
+                                <rect key="frame" x="20" y="268" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8gz-EN-00M" appends="YES" id="XVr-IY-yAv"/>
+                                    <outletCollection property="gestureRecognizers" destination="LUT-1d-xHR" appends="YES" id="k3B-GD-OOq"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6R-GW-iwd" customClass="PlayingSetCardView">
+                                <rect key="frame" x="95" y="268" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="erd-jy-WPL" appends="YES" id="c5H-xA-Fh5"/>
+                                    <outletCollection property="gestureRecognizers" destination="j52-Au-ONX" appends="YES" id="9hY-HV-89w"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngg-hr-hrF" customClass="PlayingSetCardView">
+                                <rect key="frame" x="165" y="268" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OuX-V0-oj3" appends="YES" id="7Gg-CY-5dT"/>
+                                    <outletCollection property="gestureRecognizers" destination="9yg-Ac-WdT" appends="YES" id="gct-d2-UgO"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9NE-P6-ooF" customClass="PlayingSetCardView">
+                                <rect key="frame" x="240" y="268" width="60" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZI0-F5-uF8" appends="YES" id="9yf-oh-CkV"/>
+                                    <outletCollection property="gestureRecognizers" destination="3F8-NW-7sp" appends="YES" id="mtw-db-vCu"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score : 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHR-0M-oeN">
+                                <rect key="frame" x="20" y="403" width="190" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1C-L7-1RL">
+                                <rect key="frame" x="254" y="400" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="redeal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redealAction:" destination="sbE-3W-yGt" eventType="touchUpInside" id="Bqp-SP-N20"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djy-3P-kNT">
+                                <rect key="frame" x="20" y="366" width="280" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cm1-Tk-cuK">
+                        <barButtonItem key="rightBarButtonItem" title="history" id="Iu7-TC-1Id">
+                            <connections>
+                                <segue destination="5Rm-bZ-zhh" kind="push" identifier="Show History" id="hCu-yW-aZu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scoreLabel" destination="jHR-0M-oeN" id="xcB-WX-eCz"/>
+                        <outlet property="stringLabel" destination="djy-3P-kNT" id="quK-Zf-Xup"/>
+                        <outletCollection property="playingSetCardView" destination="gBE-1k-bOg" id="h2E-zw-xbq"/>
+                        <outletCollection property="playingSetCardView" destination="1tZ-El-QKt" id="SnD-3n-ddJ"/>
+                        <outletCollection property="playingSetCardView" destination="dus-Kj-wv0" id="XSC-Be-giz"/>
+                        <outletCollection property="playingSetCardView" destination="rph-Rk-WnA" id="TvD-HV-nTX"/>
+                        <outletCollection property="playingSetCardView" destination="AA4-MV-erF" id="Yox-Bn-T2E"/>
+                        <outletCollection property="playingSetCardView" destination="MG3-kC-TLj" id="zdb-4z-qnu"/>
+                        <outletCollection property="playingSetCardView" destination="9LE-co-SZg" id="dFy-iZ-wOV"/>
+                        <outletCollection property="playingSetCardView" destination="7BX-Bz-jkJ" id="Rhp-y8-sf3"/>
+                        <outletCollection property="playingSetCardView" destination="xJ8-vN-5fY" id="RVp-U4-iqa"/>
+                        <outletCollection property="playingSetCardView" destination="E6R-GW-iwd" id="GqL-q3-e3L"/>
+                        <outletCollection property="playingSetCardView" destination="Ngg-hr-hrF" id="Miz-8K-Rtv"/>
+                        <outletCollection property="playingSetCardView" destination="9NE-P6-ooF" id="Rvk-V1-LMS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eye-23-Pwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="RVh-j6-mXx">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="kaB-n9-BPo"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="p9t-fr-etS">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="MU7-jr-qhJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="DZu-jf-DTa">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="5O5-MD-A1k"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Buo-BS-Zor">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="d6l-g1-vYY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Pjk-13-Xjj">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="f9E-CQ-Dbo"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Auo-IX-78G">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="Q6c-ne-pA3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="xI0-lD-xeN">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="0IZ-Qw-KU3"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="NN5-iZ-jkG">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="IUL-8d-hN6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="8gz-EN-00M">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="KQf-QS-yCM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="erd-jy-WPL">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="Gbr-3k-66U"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="OuX-V0-oj3">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="gy8-mw-poF"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ZI0-F5-uF8">
+                    <connections>
+                        <action selector="swipe:" destination="sbE-3W-yGt" id="U37-GG-CGj"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="pn3-yR-Pq5">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="Ng8-rs-3qk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="74o-ZE-nFI">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="aEQ-OA-AwX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6dd-y4-ojE">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="ucT-Zh-FJw"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="arq-Jc-EeR">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="TpW-dx-Lpi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZF5-hL-S2x">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="r8L-Eh-k7B"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="lCA-Pm-Kaf">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="UEg-ju-k2w"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kJA-4M-rUb">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="KJu-U7-LM8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="gjk-vK-8Pi">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="C92-ed-9fA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="LUT-1d-xHR">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="nUe-zb-WSA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="j52-Au-ONX">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="BAY-SA-Y3P"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="9yg-Ac-WdT">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="mmv-Yy-nlg"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3F8-NW-7sp">
+                    <connections>
+                        <action selector="tap:" destination="sbE-3W-yGt" id="8R5-x4-obL"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-556" y="367"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="njE-3w-kK5">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Jtp-vm-Htq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OIJ-39-hna"/>
+                    <keyCommands>
+                        <keyCommand/>
+                    </keyCommands>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="vJB-Ip-IkA">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="egp-nZ-ss6" kind="relationship" relationship="viewControllers" id="JMa-df-NAG"/>
+                        <segue destination="pBv-Kq-ayT" kind="relationship" relationship="viewControllers" id="Q1I-rP-xGs"/>
+                        <segue destination="JqL-hp-cZ5" kind="relationship" relationship="viewControllers" id="yid-1d-CaT"/>
+                        <segue destination="J7y-mw-yaC" kind="relationship" relationship="viewControllers" id="sBk-WK-jqK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TI5-QM-qpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1979" y="138"/>
+        </scene>
+        <!--Navigation Controller - CardGame-->
+        <scene sceneID="yYJ-c8-mXw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="egp-nZ-ss6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="CardGame" id="sOJ-gi-Bn0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9W-ET-N3l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="VNU-ia-pvY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22g-Kg-Rtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1430" y="-247"/>
+        </scene>
+        <!--Settings View Controller - Setting-->
+        <scene sceneID="3NJ-hX-HEh">
+            <objects>
+                <viewController title="Setting" id="J7y-mw-yaC" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wek-kE-GN8"/>
+                        <viewControllerLayoutGuide type="bottom" id="OOy-FU-OjK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TZ6-X3-H9G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Math Bonus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9m-fA-SFp">
+                                <rect key="frame" x="20" y="57" width="204" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="uSB-z5-fhp">
+                                <rect key="frame" x="18" y="112" width="284" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="mathBonusSliderAction:" destination="J7y-mw-yaC" eventType="valueChanged" id="z4x-pF-PWn"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MISMATCH_PENALITY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBn-bh-d0c">
+                                <rect key="frame" x="20" y="150" width="204" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="CS8-DM-G1d">
+                                <rect key="frame" x="18" y="203" width="284" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="mismathPenalitySliderAction:" destination="J7y-mw-yaC" eventType="valueChanged" id="Kak-4u-M9o"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost to choose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-1x-DQq">
+                                <rect key="frame" x="20" y="241" width="204" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tes-v1-4Nc">
+                                <rect key="frame" x="18" y="295" width="284" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="costToChoseSliderAction:" destination="J7y-mw-yaC" eventType="valueChanged" id="3cN-ES-38C"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keg-Tc-loU">
+                                <rect key="frame" x="258" y="65" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1N-v7-LND">
+                                <rect key="frame" x="258" y="162" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ka-lD-5CC">
+                                <rect key="frame" x="258" y="253" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="ZOi-Yx-whd"/>
+                    <connections>
+                        <outlet property="costToChooseSlider" destination="Tes-v1-4Nc" id="CMM-VL-0o4"/>
+                        <outlet property="costToChooselabel" destination="8Ka-lD-5CC" id="pIg-Dm-x3u"/>
+                        <outlet property="matchBonusLabel" destination="keg-Tc-loU" id="vxU-XZ-4z1"/>
+                        <outlet property="mathBonusSlider" destination="uSB-z5-fhp" id="3Pg-hu-HBV"/>
+                        <outlet property="mismatchPenalityLabel" destination="N1N-v7-LND" id="DMi-es-hf9"/>
+                        <outlet property="mismathPenalitySlider" destination="CS8-DM-G1d" id="ZzW-pC-kA3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8X-le-lS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1924" y="802"/>
+        </scene>
+        <!--Scores View Controller - Scores-->
+        <scene sceneID="vCj-wn-AED">
+            <objects>
+                <viewController id="JqL-hp-cZ5" customClass="ScoresViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4El-My-PXR"/>
+                        <viewControllerLayoutGuide type="bottom" id="yxN-Dm-t1m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RTW-q7-RxC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUT-Jk-o2P">
+                                <rect key="frame" x="20" y="20" width="280" height="336"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AF-l3-JrD">
+                                <rect key="frame" x="20" y="383" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="byScore">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="byScoreAction:" destination="JqL-hp-cZ5" eventType="touchUpInside" id="1W8-Vj-4GG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Al-aQ-hrg">
+                                <rect key="frame" x="130" y="383" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="byDate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="byDateAction:" destination="JqL-hp-cZ5" eventType="touchUpInside" id="z6Q-pe-Fj2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-Ay-zKr">
+                                <rect key="frame" x="214" y="383" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="byDuration">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="byDurationAction:" destination="JqL-hp-cZ5" eventType="touchUpInside" id="e3w-xT-g9f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Scores" id="Ddy-Xn-3FT"/>
+                    <connections>
+                        <outlet property="scoresTextView" destination="DUT-Jk-o2P" id="BCd-8R-xA1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0s-Ud-uFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1438" y="630"/>
+        </scene>
+        <!--Navigation Controller - SetGame-->
+        <scene sceneID="8GK-uf-uk3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pBv-Kq-ayT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="SetGame" id="5xi-DC-hNw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OAz-PL-2zI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sbE-3W-yGt" kind="relationship" relationship="rootViewController" id="X4L-X1-bMU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P4C-Q6-JRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1082" y="367"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="TUQ-DU-Lzo"/>
+    </inferredMetricsTieBreakers>
+</document>
