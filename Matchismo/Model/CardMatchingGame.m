@@ -12,6 +12,8 @@
 @interface CardMatchingGame()
 
 @property (nonatomic, readwrite) NSInteger score;
+
+
 @end
 
 
@@ -99,6 +101,7 @@ static const int COST_TO_CHOOSE=1;
                 self.dontMathFlipCard = [self.cards indexOfObject:otherCards[0]];
                 if(matchScore) {
                     self.score += matchScore *self.MATCH_BONUS;
+                    
                     for(Card *otherCard in otherCards) {
                         otherCard.matched = YES;
                         [otherCardsContets appendAttributedString: space];

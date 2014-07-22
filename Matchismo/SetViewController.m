@@ -14,6 +14,7 @@
 #import "HistoryViewController.h"
 #import "GameResult.h"
 #import "GameSettings.h"
+#import "Grid.h"
 
 @interface SetViewController ()
 @property (nonatomic, strong) Deck *deck;
@@ -21,23 +22,48 @@
 @property (nonatomic, strong) CardMatchingGame *game;
 @property (nonatomic, weak  ) IBOutlet UILabel *stringLabel;
 @property (nonatomic, strong) IBOutletCollection(PlayingSetCardView) NSArray *playingSetCardView;
+@property (nonatomic, strong) NSMutableArray *cardsView;
 @property (nonatomic, weak  ) IBOutlet UILabel *scoreLabel;
 @property (nonatomic, strong) NSMutableArray *flipsHistory;
 @property (strong, nonatomic) GameResult *gameResult;
 @property (nonatomic, strong) GameSettings *gameSettings;
+@property (nonatomic, strong) Grid *grid;
+@property (nonatomic, weak  ) IBOutlet UIView *gridView;
+@property (nonatomic, weak  ) IBOutlet UIButton *addCardButton;
 @end
 
 @implementation SetViewController
 
 #pragma mark - Proprieties
 
+- (NSMutableArray *)cardsView {
+    if(!_cardsView) {
+        _cardsView = [[NSMutableArray alloc] init];
+    }
+    return _cardsView;
+}
+
+- (Grid*)grid {
+    if(!_grid) {
+        _grid = [[Grid alloc] init];
+        _grid.cellAspectRatio = self.maxCardSize.width/self.maxCardSize.height;
+        _grid.size = self.gridView.frame.size;
+        _grid.minimumNumberOfCells = self.numberOfStartingCards;
+    }
+    return _grid;
+}
+
 - (GameSettings *)gameSettings {
-    if (!_gameSettings) _gameSettings = [[GameSettings alloc] init];
+    if (!_gameSettings)  {
+       _gameSettings = [[GameSettings alloc] init];
+    }
     return _gameSettings;
 }
 
 - (GameResult *)gameResult{
-    if (!_gameResult) _gameResult = [[GameResult alloc] init];
+    if (!_gameResult){
+        _gameResult = [[GameResult alloc] init];
+    }
     _gameResult.gameType = self.gameType;
     return _gameResult;
 }
@@ -69,6 +95,7 @@
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.playingSetCardView count]
                                                   usingDeck:[self createDeak]];
         [_game setCardsForSet:self.cards];
+        [_game setNumberOfCards:3];
     }
     return _game;
 }
@@ -81,6 +108,40 @@
             HistoryViewController *historyViewController = (HistoryViewController *)segue.destinationViewController;
             historyViewController.history = self.flipsHistory;
         }
+    }
+}
+- (IBAction)addNew3CardsActions:(UIButton *)sender {
+    if ([self.deck.cards count] < 3) {
+        self.addCardButton.enabled = NO;
+        self.addCardButton.alpha = 0.0;
+    }
+    [UIView animateWithDuration:1.0
+                     animations:^{
+                         for (int i = 0; i < 3; i++) {
+                             [self drawNewCard];
+                         }
+                         [self updateGrid];
+                     }];
+   
+}
+
+- (void)drawNewCard {
+    Card *card = [self.deck drowRandomCard];
+    if ([card isKindOfClass:[SetCard class]]) {
+        SetCard *setCard = (SetCard *)card;
+        [self.cards addObject:setCard];
+        [self.game setCardsForSet:self.cards];
+        CGRect frame;
+        frame.size = self.grid.cellSize;
+       /* frame.size.width -= 5;
+        frame.size.height -=5;*/
+        PlayingSetCardView * newCardView = [[PlayingSetCardView alloc] initWithFrame:frame];
+        newCardView.rank = setCard.rank;
+        newCardView.symbol = setCard.symbol;
+        newCardView.faceUp = YES;
+        [newCardView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)]];
+        [self.cardsView addObject:newCardView];
+        [self.gridView addSubview:newCardView ];
     }
 }
 
@@ -107,20 +168,28 @@
 }
 
 - (IBAction)redealAction:(id)sender {
-    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.playingSetCardView count]
-                                              usingDeck:[self createDeak]];
-    [self.game setNumberOfCards:3];
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
-    self.stringLabel.text = @"Play again";
-     [self.flipsHistory removeAllObjects];
-    for (PlayingSetCardView *playingSetView in self.playingSetCardView){
-        playingSetView.faceUp = NO;
-    }
-    [self setInitialCards];
-}
+    [UIView animateWithDuration:2.0
+                     animations:^{
+                         self.game =nil;
+                         self.deck = nil;
+                         [self.game setNumberOfCards:3];
+                         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
+                         self.stringLabel.text = @"Play again";
+                         [self.flipsHistory removeAllObjects];
+                         self.addCardButton.enabled = YES;
+                         self.addCardButton.alpha = 1.0;
+                         for (int i= 0; i < [self.cardsView count]; i++) {
+                             [self.cardsView[i] removeFromSuperview];
+                         }
+                         [self.cardsView removeAllObjects];
+                         [self.cards removeAllObjects];
+                         [self setInitialCards];
 
-- (IBAction)tap:(UITapGestureRecognizer *)sender {
-    int indexOfCard = [ self.playingSetCardView indexOfObject:[sender view]];
+                     }];
+    }
+
+- (void)tap:(UITapGestureRecognizer *)sender {
+    int indexOfCard = [ self.cardsView indexOfObject:[sender view]];
     [self.game chooseCardAtIndex:indexOfCard];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
     self.gameResult.score = self.game.score;
@@ -128,33 +197,58 @@
     [self.flipsHistory addObject:self.game.rezult];
     [self updateUI];
     
-
-
 }
 
 - (void)updateUI {
-    for (PlayingSetCardView *playingSetView in self.playingSetCardView){
+    for (PlayingSetCardView *playingSetView in self.cardsView){
         int cardIndex = [self.playingSetCardView indexOfObject:playingSetView];
         Card *card = [self.game cardAtIndex:cardIndex];
         if (card.isMatched) {
-           [self drawRandomPlayingCard:cardIndex];
-          //  playingSetView.faceUp = NO;
+           [UIView animateWithDuration:1.0
+                            animations:^{
+                                playingSetView.center = CGPointMake(-self.gridView.bounds.size.width, -self.gridView.bounds.size.height);
+                            }
+                            completion:^(BOOL finished) {
+                                [self.game.cards removeObjectAtIndex:cardIndex];
+                                [playingSetView removeFromSuperview];
+                            }];
+            
         }
     }
+    [self updateGrid];
 }
 
+#define CARDSPACINGINPERCENT 0.09
 
+- (void)updateGrid {
+    self.grid.minimumNumberOfCells = [self.cardsView count];
+    for (int viewIndex = 0; viewIndex < [self.cardsView count]; viewIndex++) {
+        //CGPoint center = [self.grid centerOfCellAtRow:viewIndex / self.grid.columnCount
+                                           //  inColumn:viewIndex % self.grid.columnCount];
+        //center.y += 55.0;
+        //((PlayingSetCardView *)self.cardsView[viewIndex]).center = center;
+        CGRect frame = [self.grid frameOfCellAtRow:viewIndex / self.grid.columnCount
+                                          inColumn:viewIndex % self.grid.columnCount];
+        frame = CGRectInset(frame, frame.size.width * CARDSPACINGINPERCENT, frame.size.height * CARDSPACINGINPERCENT);
+        ((PlayingSetCardView *)self.cardsView[viewIndex]).frame = frame;
+    }
+}
 
 #pragma mark - Initialization
 
 - (void)setInitialCards {
-    for (PlayingSetCardView *playingSetView in self.playingSetCardView){
+   /* for (PlayingSetCardView *playingSetView in self.playingSetCardView){
         int indexOfCard = [ self.playingSetCardView indexOfObject:playingSetView];
         if (!playingSetView.faceUp) {
             [self drawRandomPlayingCard:indexOfCard];
         }
         playingSetView.faceUp = !playingSetView.faceUp;
     }
+    */
+    for (int i = 0; i < self.numberOfStartingCards; i++) {
+        [self drawNewCard];
+    }
+    [self updateGrid];
 }
 
 - (void)viewDidLoad
@@ -162,6 +256,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.game.numberOfCards = 3;
+    self.numberOfStartingCards = 12;
+    self.maxCardSize = CGSizeMake(90.0, 120.0);
+    self.gridView.backgroundColor = nil;
+    self.gridView.opaque = NO;
+    self.gridView.contentMode = UIViewContentModeRedraw;
     [self setInitialCards];
 }
 
@@ -170,6 +269,7 @@
     self.game.MATCH_BONUS = self.gameSettings.mathBonus;
     self.game.MISMATCH_PENALITY = self.gameSettings.mathPenality;
     self.game.COST_TO_CHOOSE = self.gameSettings.flipCost;
+    [self updateGrid];
 }
 
 

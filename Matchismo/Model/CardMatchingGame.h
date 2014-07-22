@@ -14,11 +14,11 @@
 @property (nonatomic, readonly) NSInteger score;
 @property (nonatomic, strong  ) NSMutableAttributedString *rezult;
 @property (nonatomic          ) NSUInteger numberOfCards;
-@property (nonatomic          ) NSInteger MATCH_BONUS;
-@property (nonatomic          ) NSInteger COST_TO_CHOOSE;
-@property (nonatomic          ) NSInteger MISMATCH_PENALITY;
-@property (nonatomic          ) NSInteger dontMathFlipCard;
-@property (nonatomic, strong  ) NSMutableArray *cards;
+@property (nonatomic) NSInteger MATCH_BONUS;
+@property (nonatomic) NSInteger COST_TO_CHOOSE;
+@property (nonatomic) NSInteger MISMATCH_PENALITY;
+@property (nonatomic) NSInteger dontMathFlipCard;
+@property (nonatomic, strong) NSMutableArray *cards;
 
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck;
 - (void)setCardsForSet:(NSMutableArray *)cards;

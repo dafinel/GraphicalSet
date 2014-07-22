@@ -60,6 +60,7 @@
         _game.MISMATCH_PENALITY = self.gameSettings.mathPenality;
         _game.COST_TO_CHOOSE = self.gameSettings.flipCost;
         [_game setCardsForSet:self.cards];
+        [self.game setNumberOfCards:2];
     }
     
     return _game;
@@ -92,17 +93,29 @@
 }
 
 - (IBAction)redealAction:(UIButton *)sender {
-    self.game = [[CardMatchingGame alloc] initWithCardCount:[self.playingCardView count]
-                                                  usingDeck:[self createDeak]];
-    [self.game setNumberOfCards:2];
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
-    self.stringLabel.text = @"Play again";
-    [self.flipsHistory removeAllObjects];
-    for (PlayingCardGame *playingcardView in self.playingCardView){
-        playingcardView.faceUp = NO;
-        playingcardView.alpha = 1.0;
+   for (PlayingCardGame *playingcardView in self.playingCardView){
+   [UIView transitionWithView:playingcardView
+                     duration:1.0
+                      options:UIViewAnimationOptionTransitionFlipFromRight
+                   animations:^{
+                       int cardIndex = [self.playingCardView indexOfObject:playingcardView];
+                       Card *card = [self.game cardAtIndex:cardIndex];
+                       card.chosen = NO;
+                       card.matched = NO;
+                       playingcardView.faceUp = NO;
+                       playingcardView.alpha = 1.0;
+                   }
+                   completion:^(BOOL finished) {
+                       self.game = nil;
+                       self.deck = nil;
+                       self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
+                       self.stringLabel.text = @"Play again";
+                       [self.flipsHistory removeAllObjects];
+                       [self setInitialCards];
+
+                   }];
     }
-    [self setInitialCards];
+   
 }
 
 - (void)drawRandomPlayingCard:(NSUInteger) indexOfCard {
@@ -120,7 +133,24 @@
 - (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     int indexOfCard = [ self.playingCardView indexOfObject:[sender view]];
     PlayingCardGame *playingSetView = [self.playingCardView objectAtIndex:indexOfCard];
-    if (!playingSetView.faceUp) {
+    [UIView transitionWithView:playingSetView
+                      duration:2.0
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                         playingSetView.faceUp = !playingSetView.faceUp;
+                    }
+                    completion:^(BOOL finished) {
+                        if( playingSetView.faceUp) {
+                            [self.game chooseCardAtIndex:indexOfCard];
+                            self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
+                            self.gameResult.score = self.game.score;
+                            self.stringLabel.attributedText = self.game.rezult;
+                            [self.flipsHistory addObject:self.game.rezult];
+                            [self updateUI];
+                        }
+                    }];
+    
+    /*if (!playingSetView.faceUp) {
         //[self drawRandomPlayingCard:indexOfCard];
         playingSetView.faceUp = !playingSetView.faceUp;
         [self.game chooseCardAtIndex:indexOfCard];
@@ -131,9 +161,7 @@
         [self updateUI];
     } else {
         playingSetView.faceUp = !playingSetView.faceUp;
-    }
-    
-    
+    }*/
     
 }
 
@@ -146,7 +174,16 @@
             cardView.faceUp = YES;
         } else {
             PlayingCardGame *playingcardView = [self.playingCardView objectAtIndex:self.game.dontMathFlipCard];
-            playingcardView.faceUp = NO;
+            //playingcardView.faceUp = NO;
+            [UIView transitionWithView:playingcardView
+                              duration:2.0
+                               options:UIViewAnimationOptionTransitionFlipFromRight
+                            animations:^{
+                                playingcardView.faceUp = NO;
+                            }
+                            completion:^(BOOL finished) {
+                                playingcardView.faceUp = NO;
+                            }];
         }
     }
 }

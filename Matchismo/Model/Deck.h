@@ -14,5 +14,6 @@
 - (void)addCard:(Card *)card atTop:(BOOL)atTop;
 - (void)addCard:(Card *)card;
 - (Card *) drowRandomCard;
+@property (nonatomic, strong) NSMutableArray *cards;
 
 @end

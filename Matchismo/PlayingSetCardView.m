@@ -33,7 +33,7 @@
     [self setNeedsDisplay];
 }
 
-- (void)setSuit:(NSMutableAttributedString *)symbol
+- (void)setSymbol:(NSMutableAttributedString *)symbol
 {
     _symbol = symbol;
     [self setNeedsDisplay];

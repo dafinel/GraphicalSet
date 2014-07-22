@@ -10,6 +10,10 @@
 
 @interface SetViewController : UIViewController
 
-@property (strong, nonatomic) NSString *gameType;
+@property (nonatomic, strong) NSString *gameType;
+@property (nonatomic        ) NSUInteger numberOfStartingCards;
+@property (nonatomic        ) CGSize maxCardSize;
+
+-(void)tap:(UITapGestureRecognizer *)sender;
 
 @end
