@@ -8,16 +8,66 @@
 
 #import "CardMatchingGame.h"
 #import "PlayingCardDeck.h"
+#import "SetCard.h"
 
 @interface CardMatchingGame()
 
 @property (nonatomic, readwrite) NSInteger score;
 
-
 @end
 
-
 @implementation CardMatchingGame
+
+- (NSArray *)findCombination {
+    NSMutableArray *combinationOf3Cards = [NSMutableArray array];
+    for (int i = 0; i < self.numberOfCards; i++) {
+        [combinationOf3Cards addObject:@(i)];
+    }
+    NSMutableArray *foundCombination;
+    NSArray *next3Cards = combinationOf3Cards;
+    while ((next3Cards = [self nextCombinationOf3Cards:next3Cards])) {
+        Card *card = self.cards[[next3Cards[0] intValue]];
+        SetCard *setcard = (SetCard *)card;
+        if ([setcard match:[self otherCardFromCombinationOf3Cards:next3Cards]]) {
+            [foundCombination addObject:[self cardsFromCombination:next3Cards]];
+        }
+    }
+    return foundCombination;
+}
+
+- (NSArray *)cardsFromCombination: (NSArray *)next3Cards {
+    NSMutableArray *returnArray = [NSMutableArray array];
+    for (int i = 0; i < 3; i++) {
+        [returnArray addObject:self.cards[[next3Cards[i] intValue]]];
+    }
+    return returnArray;
+}
+
+- (NSArray *)nextCombinationOf3Cards:(NSArray *)next3Cards{
+    NSMutableArray *returnArray = [next3Cards mutableCopy];
+    int n = [self.cards count];
+    if(([returnArray[2] intValue] == n-1) && ([returnArray[1] intValue] == n-2) && ([returnArray[0] intValue] == n-3)) {
+        return nil;
+    }
+    if ([returnArray[2] intValue] < n-1) {
+        returnArray[2] = @([returnArray[2] intValue]+1);
+    } else if ([returnArray[1] intValue] < n-2) {
+        returnArray[1] = @([returnArray[1] intValue]+1);
+        returnArray[2] = @([returnArray[1] intValue]+1);
+    } else if ([returnArray[0] intValue] < n-3) {
+        returnArray[0] = @([returnArray[0] intValue]+1);
+        returnArray[1] = @([returnArray[0] intValue]+1);
+        returnArray[2] = @([returnArray[0] intValue]+2);
+    }
+    return returnArray;
+}
+
+- (NSArray *)otherCardFromCombinationOf3Cards:(NSArray *)next3Cards {
+    NSMutableArray *returnArray = [NSMutableArray array];
+    for (int i = 1; i < 3; i++) {
+        [returnArray addObject:self.cards[[next3Cards[i] intValue]]];
+    }
+    return returnArray;}
 
 - (NSUInteger)numberOfCards {
     if (!_numberOfCards) {

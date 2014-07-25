@@ -3,13 +3,19 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[SetViewController setInitialCards]:SetViewController.m">
+         contextName = "-[SetViewController updateGrid]:SetViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[SetViewController drawNewCard]:SetViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[SetViewController updateGrid]:SetViewController.m">
+         contextName = "-[SetViewController setInitialCards]:SetViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CardMatchingGame findCombination]:CardMatchingGame.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SetViewController grid]:SetViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[SetViewController tap:]:SetViewController.m">
@@ -20,7 +26,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[SetViewController grid]:SetViewController.m">
+         contextName = "-[SetViewController willRotateToInterfaceOrientation:duration:]:SetViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -26,5 +26,6 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 - (void)setNewScore:(NSInteger)newScore;
 - (void)unchooseCards;
+- (NSArray *)findCombination;
 
 @end

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Jtp-vm-Htq">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -13,18 +14,18 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-p9-M08">
-                                <rect key="frame" x="24" y="404" width="164" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-p9-M08">
+                                <rect key="frame" x="20" y="490" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-Y9-TS6">
-                                <rect key="frame" x="225" y="400" width="59" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEY-Y9-TS6">
+                                <rect key="frame" x="256" y="481" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -33,15 +34,15 @@
                                     <action selector="redealAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LUW-hM-ho0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-gX-ccW">
-                                <rect key="frame" x="20" y="346" width="280" height="46"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-gX-ccW">
+                                <rect key="frame" x="20" y="459" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Gl-82l" customClass="PlayingCardGame">
-                                <rect key="frame" x="20" y="74" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-Gl-82l" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="74" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -49,8 +50,8 @@
                                     <outletCollection property="gestureRecognizers" destination="bdb-fu-Zlr" appends="YES" id="lgt-WO-wPp"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="InS-3v-fQi" customClass="PlayingCardGame">
-                                <rect key="frame" x="68" y="74" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InS-3v-fQi" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="74" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -58,8 +59,8 @@
                                     <outletCollection property="gestureRecognizers" destination="ltP-qU-tzw" appends="YES" id="6e2-DI-hmK"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yl-kM-Dxj" customClass="PlayingCardGame">
-                                <rect key="frame" x="116" y="74" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yl-kM-Dxj" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="74" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -67,8 +68,8 @@
                                     <outletCollection property="gestureRecognizers" destination="cpg-Ny-pmN" appends="YES" id="hoj-x8-o44"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vm2-s3-YDq" customClass="PlayingCardGame">
-                                <rect key="frame" x="164" y="74" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vm2-s3-YDq" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="74" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -76,8 +77,8 @@
                                     <outletCollection property="gestureRecognizers" destination="Rhj-g3-XLd" appends="YES" id="b1w-bW-I4V"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-Jm-39x" customClass="PlayingCardGame">
-                                <rect key="frame" x="212" y="74" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-Jm-39x" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="74" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -85,8 +86,8 @@
                                     <outletCollection property="gestureRecognizers" destination="py4-Eb-g13" appends="YES" id="27w-z3-hkn"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RJS-Zp-Tik" customClass="PlayingCardGame">
-                                <rect key="frame" x="260" y="74" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJS-Zp-Tik" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="74" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -94,8 +95,8 @@
                                     <outletCollection property="gestureRecognizers" destination="k7T-ea-CAn" appends="YES" id="ptM-Ii-VbA"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytp-ah-1G4" customClass="PlayingCardGame">
-                                <rect key="frame" x="20" y="142" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytp-ah-1G4" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="164" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -103,8 +104,8 @@
                                     <outletCollection property="gestureRecognizers" destination="4gl-QW-eWM" appends="YES" id="KeL-cR-dfV"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEt-6a-UOa" customClass="PlayingCardGame">
-                                <rect key="frame" x="68" y="142" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEt-6a-UOa" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="164" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -112,8 +113,8 @@
                                     <outletCollection property="gestureRecognizers" destination="3IC-AX-r4A" appends="YES" id="pc8-9C-yWW"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-uH-sc9" customClass="PlayingCardGame">
-                                <rect key="frame" x="116" y="142" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewG-uH-sc9" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="164" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -121,8 +122,8 @@
                                     <outletCollection property="gestureRecognizers" destination="VC0-Jo-ve2" appends="YES" id="lLb-cg-oor"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kt5-2L-Lmt" customClass="PlayingCardGame">
-                                <rect key="frame" x="164" y="142" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kt5-2L-Lmt" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="164" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -130,8 +131,8 @@
                                     <outletCollection property="gestureRecognizers" destination="zf3-G9-nxJ" appends="YES" id="jvx-sP-ITC"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-M8-y7x" customClass="PlayingCardGame">
-                                <rect key="frame" x="212" y="142" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-M8-y7x" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="164" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -139,8 +140,8 @@
                                     <outletCollection property="gestureRecognizers" destination="6F1-tc-cUD" appends="YES" id="Ckk-Jc-kRc"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mco-X8-U5S" customClass="PlayingCardGame">
-                                <rect key="frame" x="260" y="142" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mco-X8-U5S" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="164" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -148,8 +149,8 @@
                                     <outletCollection property="gestureRecognizers" destination="WMv-PL-8fP" appends="YES" id="qkR-tp-uUJ"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZS-6l-XUi" customClass="PlayingCardGame">
-                                <rect key="frame" x="20" y="210" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZS-6l-XUi" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="254" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -157,8 +158,8 @@
                                     <outletCollection property="gestureRecognizers" destination="CX7-Ab-Mnq" appends="YES" id="qAx-kp-cvp"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jac-Ol-vAx" customClass="PlayingCardGame">
-                                <rect key="frame" x="68" y="210" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jac-Ol-vAx" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="254" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -166,8 +167,8 @@
                                     <outletCollection property="gestureRecognizers" destination="wak-jD-rkI" appends="YES" id="L2E-cW-a5s"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elu-N3-LDn" customClass="PlayingCardGame">
-                                <rect key="frame" x="116" y="210" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elu-N3-LDn" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="254" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -175,8 +176,8 @@
                                     <outletCollection property="gestureRecognizers" destination="m1z-EZ-gpd" appends="YES" id="pKZ-LK-33H"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-Wv-4QK" customClass="PlayingCardGame">
-                                <rect key="frame" x="164" y="210" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-Wv-4QK" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="254" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -184,8 +185,8 @@
                                     <outletCollection property="gestureRecognizers" destination="ScE-fB-od5" appends="YES" id="NeP-gp-D1o"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-Us-hfJ" customClass="PlayingCardGame">
-                                <rect key="frame" x="212" y="210" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEH-Us-hfJ" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="254" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -193,8 +194,8 @@
                                     <outletCollection property="gestureRecognizers" destination="nTx-sE-4rQ" appends="YES" id="hAV-Pv-5mO"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gvt-pi-qA4" customClass="PlayingCardGame">
-                                <rect key="frame" x="260" y="210" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvt-pi-qA4" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="254" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -202,8 +203,8 @@
                                     <outletCollection property="gestureRecognizers" destination="fs8-Lc-QXV" appends="YES" id="wg8-IG-Qag"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A79-e6-elu" customClass="PlayingCardGame">
-                                <rect key="frame" x="20" y="278" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A79-e6-elu" customClass="PlayingCardGame">
+                                <rect key="frame" x="20" y="344" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -211,8 +212,8 @@
                                     <outletCollection property="gestureRecognizers" destination="xuz-uV-8Mu" appends="YES" id="zxH-cp-IUq"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yZi-1u-BHM" customClass="PlayingCardGame">
-                                <rect key="frame" x="68" y="278" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZi-1u-BHM" customClass="PlayingCardGame">
+                                <rect key="frame" x="68" y="344" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -220,8 +221,8 @@
                                     <outletCollection property="gestureRecognizers" destination="jFg-2M-zip" appends="YES" id="lag-s5-x9z"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-7c-IuA" customClass="PlayingCardGame">
-                                <rect key="frame" x="116" y="278" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-7c-IuA" customClass="PlayingCardGame">
+                                <rect key="frame" x="116" y="344" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -229,8 +230,8 @@
                                     <outletCollection property="gestureRecognizers" destination="MPC-AC-8oD" appends="YES" id="0eh-QH-sfC"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-Vn-q0h" customClass="PlayingCardGame">
-                                <rect key="frame" x="164" y="278" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-Vn-q0h" customClass="PlayingCardGame">
+                                <rect key="frame" x="164" y="344" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -238,8 +239,8 @@
                                     <outletCollection property="gestureRecognizers" destination="yGN-R8-3id" appends="YES" id="9cl-Qz-nwe"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="za6-PU-s6c" customClass="PlayingCardGame">
-                                <rect key="frame" x="212" y="278" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="za6-PU-s6c" customClass="PlayingCardGame">
+                                <rect key="frame" x="212" y="344" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -247,8 +248,8 @@
                                     <outletCollection property="gestureRecognizers" destination="Z3Y-hE-j1y" appends="YES" id="wNw-Sw-54p"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-QR-Ggt" customClass="PlayingCardGame">
-                                <rect key="frame" x="260" y="278" width="40" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-QR-Ggt" customClass="PlayingCardGame">
+                                <rect key="frame" x="260" y="344" width="40" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -258,11 +259,123 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4yl-kM-Dxj" firstAttribute="leading" secondItem="InS-3v-fQi" secondAttribute="trailing" constant="8" id="17r-DX-rzc"/>
+                            <constraint firstItem="jac-Ol-vAx" firstAttribute="top" secondItem="YEt-6a-UOa" secondAttribute="bottom" constant="8" id="1Ug-gr-TQn"/>
+                            <constraint firstItem="4yl-kM-Dxj" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="1bb-dY-TAm"/>
+                            <constraint firstItem="Ebh-7c-IuA" firstAttribute="top" secondItem="elu-N3-LDn" secondAttribute="bottom" constant="8" id="2Ed-f0-jdx"/>
+                            <constraint firstItem="A79-e6-elu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="2Vm-fQ-N5t"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="za6-PU-s6c" secondAttribute="width" id="3fA-UZ-DDZ"/>
+                            <constraint firstItem="elu-N3-LDn" firstAttribute="top" secondItem="ewG-uH-sc9" secondAttribute="bottom" constant="8" id="3hj-JS-Ma7"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="InS-3v-fQi" secondAttribute="width" id="4qT-vQ-hhd"/>
+                            <constraint firstItem="yZi-1u-BHM" firstAttribute="top" secondItem="jac-Ol-vAx" secondAttribute="bottom" constant="8" id="4z3-se-3ms"/>
+                            <constraint firstItem="elu-N3-LDn" firstAttribute="leading" secondItem="jac-Ol-vAx" secondAttribute="trailing" constant="8" id="6w8-ZJ-Tcv"/>
+                            <constraint firstItem="kt5-2L-Lmt" firstAttribute="leading" secondItem="ewG-uH-sc9" secondAttribute="trailing" constant="8" id="7Q1-gr-l0n"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="yZi-1u-BHM" secondAttribute="height" id="83E-bn-1iA"/>
+                            <constraint firstItem="7FS-M8-y7x" firstAttribute="leading" secondItem="kt5-2L-Lmt" secondAttribute="trailing" constant="8" id="90T-e5-J7n"/>
+                            <constraint firstItem="jcx-Wv-4QK" firstAttribute="leading" secondItem="elu-N3-LDn" secondAttribute="trailing" constant="8" id="AhW-a0-Ix1"/>
+                            <constraint firstItem="hNg-p9-M08" firstAttribute="top" secondItem="Fdy-gX-ccW" secondAttribute="bottom" constant="10" id="CEO-lp-1Db"/>
+                            <constraint firstItem="Ebh-7c-IuA" firstAttribute="leading" secondItem="yZi-1u-BHM" secondAttribute="trailing" constant="8" id="Crj-ZC-9Y6"/>
+                            <constraint firstItem="Fdy-gX-ccW" firstAttribute="top" secondItem="Zzs-QR-Ggt" secondAttribute="bottom" constant="33" id="DGp-aZ-ysb"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="elu-N3-LDn" secondAttribute="height" id="E3b-IQ-erY"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="yZi-1u-BHM" secondAttribute="width" id="ESX-vp-rq3"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="Mco-X8-U5S" secondAttribute="width" id="EuH-Ff-6Hc"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="JzP-Jm-39x" secondAttribute="height" id="FM8-P4-fb1"/>
+                            <constraint firstItem="Mco-X8-U5S" firstAttribute="top" secondItem="RJS-Zp-Tik" secondAttribute="bottom" constant="8" id="H3e-hv-3oM"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="Mco-X8-U5S" secondAttribute="height" id="H6A-QX-KCa"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="YEt-6a-UOa" secondAttribute="height" id="HcB-dz-KXf"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="Ebh-7c-IuA" secondAttribute="height" id="J8U-o5-Iga"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="Zzs-QR-Ggt" secondAttribute="width" id="JFX-NQ-zyK"/>
+                            <constraint firstItem="jcx-Wv-4QK" firstAttribute="top" secondItem="kt5-2L-Lmt" secondAttribute="bottom" constant="8" id="JvH-sX-H6Z"/>
+                            <constraint firstItem="ewG-uH-sc9" firstAttribute="top" secondItem="4yl-kM-Dxj" secondAttribute="bottom" constant="8" id="M6L-Qd-B5V"/>
+                            <constraint firstItem="Vm2-s3-YDq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="MMa-Yc-H3A"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="4yl-kM-Dxj" secondAttribute="width" id="Mbh-He-Pb6"/>
+                            <constraint firstAttribute="trailing" secondItem="Mco-X8-U5S" secondAttribute="trailing" constant="20" id="Mfj-33-so1"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="RJS-Zp-Tik" secondAttribute="width" id="OSb-hl-meI"/>
+                            <constraint firstItem="Mco-X8-U5S" firstAttribute="leading" secondItem="7FS-M8-y7x" secondAttribute="trailing" constant="8" id="OqA-89-FNh"/>
+                            <constraint firstItem="OZS-6l-XUi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="PEB-B0-oRS"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="vX6-Vn-q0h" secondAttribute="height" id="PNX-Ro-gbd"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="top" secondItem="7FS-M8-y7x" secondAttribute="bottom" constant="8" id="PpO-j0-cyJ"/>
+                            <constraint firstItem="Gvt-pi-qA4" firstAttribute="top" secondItem="Mco-X8-U5S" secondAttribute="bottom" constant="8" id="Pvg-DF-2NT"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="7FS-M8-y7x" secondAttribute="width" id="Q0j-wP-jMr"/>
+                            <constraint firstItem="RJS-Zp-Tik" firstAttribute="leading" secondItem="JzP-Jm-39x" secondAttribute="trailing" constant="8" id="QL8-g8-44J"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hNg-p9-M08" secondAttribute="bottom" constant="20" symbolic="YES" id="QSx-mj-5Y7"/>
+                            <constraint firstItem="Vm2-s3-YDq" firstAttribute="leading" secondItem="4yl-kM-Dxj" secondAttribute="trailing" constant="8" id="QWc-KL-yET"/>
+                            <constraint firstAttribute="trailing" secondItem="Zzs-QR-Ggt" secondAttribute="trailing" constant="20" id="QlG-hE-fYE"/>
+                            <constraint firstItem="Fdy-gX-ccW" firstAttribute="top" secondItem="A79-e6-elu" secondAttribute="bottom" constant="33" id="QxN-PE-3UP"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="kt5-2L-Lmt" secondAttribute="width" id="Rsa-l2-TzH"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="leading" secondItem="jcx-Wv-4QK" secondAttribute="trailing" constant="8" id="SSN-E1-Una"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="ytp-ah-1G4" secondAttribute="height" id="SSy-9N-Fu8"/>
+                            <constraint firstAttribute="trailing" secondItem="hEY-Y9-TS6" secondAttribute="trailing" constant="20" symbolic="YES" id="T9q-yU-pHf"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="jac-Ol-vAx" secondAttribute="height" id="TGB-WD-Bhl"/>
+                            <constraint firstItem="hNg-p9-M08" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="TmN-4R-MBg"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="jac-Ol-vAx" secondAttribute="width" id="U0m-GR-5QX"/>
+                            <constraint firstItem="ewG-uH-sc9" firstAttribute="leading" secondItem="YEt-6a-UOa" secondAttribute="trailing" constant="8" id="UdT-gQ-5R2"/>
+                            <constraint firstAttribute="trailing" secondItem="RJS-Zp-Tik" secondAttribute="trailing" constant="20" id="Uwa-Z8-lHc"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="kt5-2L-Lmt" secondAttribute="height" id="Vh1-qe-fPm"/>
+                            <constraint firstItem="za6-PU-s6c" firstAttribute="leading" secondItem="vX6-Vn-q0h" secondAttribute="trailing" constant="8" id="VjH-ai-yaU"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="Ebh-7c-IuA" secondAttribute="width" id="WG1-1g-ImU"/>
+                            <constraint firstItem="JzP-Jm-39x" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="Waf-IP-uZp"/>
+                            <constraint firstItem="Fdy-gX-ccW" firstAttribute="top" secondItem="yZi-1u-BHM" secondAttribute="bottom" constant="33" id="X66-dq-Tif"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="Vm2-s3-YDq" secondAttribute="height" id="XNb-t2-0PK"/>
+                            <constraint firstItem="A79-e6-elu" firstAttribute="top" secondItem="OZS-6l-XUi" secondAttribute="bottom" constant="8" id="YYy-7e-Er6"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="ewG-uH-sc9" secondAttribute="height" id="YlT-d3-si2"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="RJS-Zp-Tik" secondAttribute="height" id="aLh-G6-MO0"/>
+                            <constraint firstItem="jac-Ol-vAx" firstAttribute="leading" secondItem="OZS-6l-XUi" secondAttribute="trailing" constant="8" id="aj5-ZZ-qTc"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="Gvt-pi-qA4" secondAttribute="height" id="b66-xP-fvk"/>
+                            <constraint firstItem="WBg-Gl-82l" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="bDf-DV-ihR"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="YEt-6a-UOa" secondAttribute="width" id="bc1-pf-AmR"/>
+                            <constraint firstItem="za6-PU-s6c" firstAttribute="top" secondItem="rEH-Us-hfJ" secondAttribute="bottom" constant="8" id="c3d-7E-Olp"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="elu-N3-LDn" secondAttribute="width" id="c6X-IV-mJF"/>
+                            <constraint firstItem="InS-3v-fQi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="c76-F1-yyS"/>
+                            <constraint firstItem="kt5-2L-Lmt" firstAttribute="top" secondItem="Vm2-s3-YDq" secondAttribute="bottom" constant="8" id="ctQ-ji-pkh"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="A79-e6-elu" secondAttribute="width" id="dEP-SZ-BfV"/>
+                            <constraint firstItem="vX6-Vn-q0h" firstAttribute="leading" secondItem="Ebh-7c-IuA" secondAttribute="trailing" constant="8" id="dcf-ib-cU0"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="jcx-Wv-4QK" secondAttribute="height" id="eIo-1c-Al5"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="Vm2-s3-YDq" secondAttribute="width" id="ehd-s2-WQb"/>
+                            <constraint firstItem="YEt-6a-UOa" firstAttribute="top" secondItem="InS-3v-fQi" secondAttribute="bottom" constant="8" id="eqC-5j-n8s"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="za6-PU-s6c" secondAttribute="height" id="fmX-kr-Fjq"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="OZS-6l-XUi" secondAttribute="height" id="fqL-46-uLV"/>
+                            <constraint firstItem="vX6-Vn-q0h" firstAttribute="top" secondItem="jcx-Wv-4QK" secondAttribute="bottom" constant="8" id="gkv-yx-RqA"/>
+                            <constraint firstItem="InS-3v-fQi" firstAttribute="leading" secondItem="WBg-Gl-82l" secondAttribute="trailing" constant="8" id="h6k-0L-qxI"/>
+                            <constraint firstItem="Fdy-gX-ccW" firstAttribute="top" secondItem="vX6-Vn-q0h" secondAttribute="bottom" constant="33" id="iSp-0C-bTB"/>
+                            <constraint firstItem="7FS-M8-y7x" firstAttribute="top" secondItem="JzP-Jm-39x" secondAttribute="bottom" constant="8" id="irk-xg-hwy"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="OZS-6l-XUi" secondAttribute="width" id="jAw-7V-kwf"/>
+                            <constraint firstItem="WBg-Gl-82l" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="jOQ-pq-77C"/>
+                            <constraint firstItem="OZS-6l-XUi" firstAttribute="top" secondItem="ytp-ah-1G4" secondAttribute="bottom" constant="8" id="jvT-Y1-9Pk"/>
+                            <constraint firstItem="yZi-1u-BHM" firstAttribute="leading" secondItem="A79-e6-elu" secondAttribute="trailing" constant="8" id="kSc-CE-Kx1"/>
+                            <constraint firstItem="Gvt-pi-qA4" firstAttribute="leading" secondItem="rEH-Us-hfJ" secondAttribute="trailing" constant="8" id="kcA-vl-I20"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="4yl-kM-Dxj" secondAttribute="height" id="m7N-Bh-lNU"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="ewG-uH-sc9" secondAttribute="width" id="mMd-Dp-ZSk"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="InS-3v-fQi" secondAttribute="height" id="mvq-Qs-5mO"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="WBg-Gl-82l" secondAttribute="height" id="ncw-w9-dr7"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="7FS-M8-y7x" secondAttribute="height" id="ntc-Cu-qfi"/>
+                            <constraint firstItem="Fdy-gX-ccW" firstAttribute="top" secondItem="za6-PU-s6c" secondAttribute="bottom" constant="33" id="nuy-lU-SiQ"/>
+                            <constraint firstItem="ytp-ah-1G4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="o6a-oE-coJ"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="WBg-Gl-82l" secondAttribute="width" id="o6t-av-VNI"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="Gvt-pi-qA4" secondAttribute="width" id="pBA-gc-Q80"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="vX6-Vn-q0h" secondAttribute="width" id="qOd-Ok-Pwz"/>
+                            <constraint firstItem="hNg-p9-M08" firstAttribute="leading" secondItem="Fdy-gX-ccW" secondAttribute="leading" id="qlC-u4-iZv"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="JzP-Jm-39x" secondAttribute="width" id="qqN-oP-txj"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="ytp-ah-1G4" secondAttribute="width" id="sLX-m3-Icl"/>
+                            <constraint firstItem="ytp-ah-1G4" firstAttribute="top" secondItem="WBg-Gl-82l" secondAttribute="bottom" constant="8" id="uL5-kF-tyS"/>
+                            <constraint firstItem="JzP-Jm-39x" firstAttribute="leading" secondItem="Vm2-s3-YDq" secondAttribute="trailing" constant="8" id="vNv-HF-2Eh"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="width" secondItem="jcx-Wv-4QK" secondAttribute="width" id="vQV-tl-6p9"/>
+                            <constraint firstItem="RJS-Zp-Tik" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="vcd-Qr-viL"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hEY-Y9-TS6" secondAttribute="bottom" constant="20" symbolic="YES" id="vzy-tL-dDP"/>
+                            <constraint firstItem="Zzs-QR-Ggt" firstAttribute="leading" secondItem="za6-PU-s6c" secondAttribute="trailing" constant="8" id="wR0-8n-fXU"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="Zzs-QR-Ggt" secondAttribute="height" id="wZZ-uD-DT5"/>
+                            <constraint firstItem="YEt-6a-UOa" firstAttribute="leading" secondItem="ytp-ah-1G4" secondAttribute="trailing" constant="8" id="x5d-E5-Y2D"/>
+                            <constraint firstAttribute="trailing" secondItem="Gvt-pi-qA4" secondAttribute="trailing" constant="20" id="xw7-E1-SX0"/>
+                            <constraint firstItem="Zzs-QR-Ggt" firstAttribute="top" secondItem="Gvt-pi-qA4" secondAttribute="bottom" constant="8" id="ydv-iJ-wdp"/>
+                            <constraint firstItem="Fdy-gX-ccW" firstAttribute="top" secondItem="Ebh-7c-IuA" secondAttribute="bottom" constant="33" id="zI0-Kv-22z"/>
+                            <constraint firstItem="rEH-Us-hfJ" firstAttribute="height" secondItem="A79-e6-elu" secondAttribute="height" id="zum-sq-woL"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="o3Z-0o-dZJ">
-                        <barButtonItem key="rightBarButtonItem" title="history" id="ETI-zl-rij">
+                    <navigationItem key="navigationItem" id="6Vu-2h-7a3">
+                        <barButtonItem key="rightBarButtonItem" title="history" id="JWB-D6-j4Q">
                             <connections>
-                                <segue destination="5Rm-bZ-zhh" kind="push" identifier="Show History" id="TUQ-DU-Lzo"/>
+                                <segue destination="5Rm-bZ-zhh" kind="push" identifier="Show History" id="ZqP-jl-VcF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -428,11 +541,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Kg4-ag-der"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wXb-3G-3GM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoE-Vd-zsF">
-                                <rect key="frame" x="20" y="72" width="280" height="350"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoE-Vd-zsF">
+                                <rect key="frame" x="20" y="72" width="280" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -440,6 +553,12 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IoE-Vd-zsF" firstAttribute="top" secondItem="ike-tz-yj2" secondAttribute="bottom" constant="8" id="6kx-zO-25w"/>
+                            <constraint firstAttribute="trailing" secondItem="IoE-Vd-zsF" secondAttribute="trailing" constant="20" symbolic="YES" id="95w-YM-Akp"/>
+                            <constraint firstItem="IoE-Vd-zsF" firstAttribute="leading" secondItem="wXb-3G-3GM" secondAttribute="leading" constant="20" symbolic="YES" id="9g7-99-Ei8"/>
+                            <constraint firstItem="Kg4-ag-der" firstAttribute="top" secondItem="IoE-Vd-zsF" secondAttribute="bottom" constant="9" id="R1L-cj-bwW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WGY-vb-hC8"/>
                     <connections>
@@ -459,18 +578,18 @@
                         <viewControllerLayoutGuide type="bottom" id="a6F-L6-ePD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IgH-F6-hGX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score : 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHR-0M-oeN">
-                                <rect key="frame" x="20" y="403" width="190" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score : 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHR-0M-oeN">
+                                <rect key="frame" x="20" y="490" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1C-L7-1RL">
-                                <rect key="frame" x="254" y="400" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1C-L7-1RL">
+                                <rect key="frame" x="257" y="481" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="redeal">
@@ -480,15 +599,15 @@
                                     <action selector="redealAction:" destination="sbE-3W-yGt" eventType="touchUpInside" id="Bqp-SP-N20"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djy-3P-kNT">
-                                <rect key="frame" x="20" y="366" width="280" height="26"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djy-3P-kNT">
+                                <rect key="frame" x="20" y="469" width="38" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjJ-Zi-K0e">
-                                <rect key="frame" x="212" y="400" width="29" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjJ-Zi-K0e">
+                                <rect key="frame" x="219" y="481" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="+3">
@@ -498,13 +617,27 @@
                                     <action selector="addNew3CardsActions:" destination="sbE-3W-yGt" eventType="touchUpInside" id="2iz-wT-plI"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="00N-Ok-LaY">
-                                <rect key="frame" x="20" y="72" width="286" height="286"/>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00N-Ok-LaY">
+                                <rect key="frame" x="20" y="64" width="280" height="405"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="a6F-L6-ePD" firstAttribute="top" secondItem="KjJ-Zi-K0e" secondAttribute="bottom" constant="20" symbolic="YES" id="1B6-9Y-hQ4"/>
+                            <constraint firstItem="a6F-L6-ePD" firstAttribute="top" secondItem="jHR-0M-oeN" secondAttribute="bottom" constant="20" symbolic="YES" id="1ZZ-Xh-CaY"/>
+                            <constraint firstItem="a6F-L6-ePD" firstAttribute="top" secondItem="w1C-L7-1RL" secondAttribute="bottom" constant="20" symbolic="YES" id="B6F-PP-vDM"/>
+                            <constraint firstItem="00N-Ok-LaY" firstAttribute="leading" secondItem="IgH-F6-hGX" secondAttribute="leading" constant="20" symbolic="YES" id="Dh7-E3-INy"/>
+                            <constraint firstItem="djy-3P-kNT" firstAttribute="top" secondItem="00N-Ok-LaY" secondAttribute="bottom" id="H3t-hL-EZJ"/>
+                            <constraint firstAttribute="trailing" secondItem="w1C-L7-1RL" secondAttribute="trailing" constant="20" symbolic="YES" id="JTT-oi-mSe"/>
+                            <constraint firstAttribute="trailing" secondItem="00N-Ok-LaY" secondAttribute="trailing" constant="20" symbolic="YES" id="P8S-B2-0hP"/>
+                            <constraint firstItem="w1C-L7-1RL" firstAttribute="leading" secondItem="KjJ-Zi-K0e" secondAttribute="trailing" constant="8" symbolic="YES" id="UM7-9j-qNI"/>
+                            <constraint firstItem="jHR-0M-oeN" firstAttribute="leading" secondItem="IgH-F6-hGX" secondAttribute="leading" constant="20" symbolic="YES" id="Z5I-3r-WSq"/>
+                            <constraint firstItem="jHR-0M-oeN" firstAttribute="top" secondItem="djy-3P-kNT" secondAttribute="bottom" id="aJS-Ji-kT1"/>
+                            <constraint firstItem="djy-3P-kNT" firstAttribute="leading" secondItem="IgH-F6-hGX" secondAttribute="leading" constant="20" symbolic="YES" id="tS3-Kr-ntL"/>
+                            <constraint firstItem="00N-Ok-LaY" firstAttribute="top" secondItem="CBm-yi-259" secondAttribute="bottom" id="vyE-6q-RDN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cm1-Tk-cuK">
                         <barButtonItem key="rightBarButtonItem" title="history" id="Iu7-TC-1Id">
@@ -576,7 +709,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OOy-FU-OjK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TZ6-X3-H9G">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Math Bonus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9m-fA-SFp">
@@ -689,18 +822,18 @@
                         <viewControllerLayoutGuide type="bottom" id="yxN-Dm-t1m"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RTW-q7-RxC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUT-Jk-o2P">
-                                <rect key="frame" x="20" y="20" width="280" height="336"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUT-Jk-o2P">
+                                <rect key="frame" x="20" y="20" width="280" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AF-l3-JrD">
-                                <rect key="frame" x="20" y="383" width="63" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AF-l3-JrD">
+                                <rect key="frame" x="20" y="481" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="byScore">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -709,9 +842,12 @@
                                     <action selector="byScoreAction:" destination="JqL-hp-cZ5" eventType="touchUpInside" id="1W8-Vj-4GG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Al-aQ-hrg">
-                                <rect key="frame" x="130" y="383" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Al-aQ-hrg">
+                                <rect key="frame" x="130" y="481" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="7N6-4J-raI"/>
+                                </constraints>
                                 <state key="normal" title="byDate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -719,8 +855,8 @@
                                     <action selector="byDateAction:" destination="JqL-hp-cZ5" eventType="touchUpInside" id="z6Q-pe-Fj2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-Ay-zKr">
-                                <rect key="frame" x="214" y="383" width="86" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-Ay-zKr">
+                                <rect key="frame" x="225" y="481" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="byDuration">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -731,6 +867,23 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DUT-Jk-o2P" firstAttribute="leading" secondItem="1AF-l3-JrD" secondAttribute="leading" id="53l-Ka-KIm"/>
+                            <constraint firstAttribute="trailing" secondItem="DUT-Jk-o2P" secondAttribute="trailing" constant="20" symbolic="YES" id="AU0-rn-hSp"/>
+                            <constraint firstItem="DUT-Jk-o2P" firstAttribute="leading" secondItem="RTW-q7-RxC" secondAttribute="leading" constant="20" symbolic="YES" id="GOZ-PM-fQG"/>
+                            <constraint firstItem="DUT-Jk-o2P" firstAttribute="centerX" secondItem="5Al-aQ-hrg" secondAttribute="centerX" id="LPs-gs-eSc"/>
+                            <constraint firstItem="DUT-Jk-o2P" firstAttribute="top" secondItem="4El-My-PXR" secondAttribute="bottom" id="VUg-6W-Wmf"/>
+                            <constraint firstItem="yxN-Dm-t1m" firstAttribute="top" secondItem="o8h-Ay-zKr" secondAttribute="bottom" constant="20" symbolic="YES" id="XcK-Sj-SdC"/>
+                            <constraint firstItem="DUT-Jk-o2P" firstAttribute="trailing" secondItem="o8h-Ay-zKr" secondAttribute="trailing" id="a8a-xa-aWz"/>
+                            <constraint firstItem="5Al-aQ-hrg" firstAttribute="baseline" secondItem="o8h-Ay-zKr" secondAttribute="baseline" id="fON-8t-WwD"/>
+                            <constraint firstItem="1AF-l3-JrD" firstAttribute="leading" secondItem="RTW-q7-RxC" secondAttribute="leading" constant="20" symbolic="YES" id="gQL-LX-BZ2"/>
+                            <constraint firstItem="DUT-Jk-o2P" firstAttribute="top" secondItem="RTW-q7-RxC" secondAttribute="top" constant="20" symbolic="YES" id="jls-F4-LKP"/>
+                            <constraint firstItem="yxN-Dm-t1m" firstAttribute="top" secondItem="1AF-l3-JrD" secondAttribute="bottom" constant="20" symbolic="YES" id="s3U-zr-Fne"/>
+                            <constraint firstItem="o8h-Ay-zKr" firstAttribute="top" secondItem="DUT-Jk-o2P" secondAttribute="bottom" constant="8" symbolic="YES" id="xEb-X3-5hD"/>
+                            <constraint firstItem="1AF-l3-JrD" firstAttribute="top" secondItem="DUT-Jk-o2P" secondAttribute="bottom" constant="8" symbolic="YES" id="yd2-x6-7aI"/>
+                            <constraint firstAttribute="trailing" secondItem="o8h-Ay-zKr" secondAttribute="trailing" constant="20" symbolic="YES" id="zJ7-F7-tt0"/>
+                            <constraint firstItem="yxN-Dm-t1m" firstAttribute="top" secondItem="5Al-aQ-hrg" secondAttribute="bottom" constant="20" symbolic="YES" id="zsf-sq-t2k"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scores" id="Ddy-Xn-3FT"/>
                     <connections>
@@ -739,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0s-Ud-uFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1438" y="630"/>
+            <point key="canvasLocation" x="-1436" y="668"/>
         </scene>
         <!--Navigation Controller - SetGame-->
         <scene sceneID="8GK-uf-uk3">
@@ -768,9 +921,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hCu-yW-aZu"/>
+        <segue reference="ZqP-jl-VcF"/>
     </inferredMetricsTieBreakers>
 </document>
